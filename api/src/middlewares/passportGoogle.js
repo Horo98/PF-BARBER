@@ -30,7 +30,7 @@ passport.use(
       clientID:
         "877624758917-d8cb6f147jp9cnrp524d0fupcuka3dvs.apps.googleusercontent.com",
       clientSecret: "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",
-      callbackURL: "https://barber-deploy.herokuapp.com/auth/google/signup",
+      callbackURL: "pf-barber-production-4b93.up.railway.app/auth/google/signup",
     },
     async (accessToken, refreshToken, profile, done) => {
       const user = await User.findOne({
