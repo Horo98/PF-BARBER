@@ -145,10 +145,10 @@ exports.loginGoogle = async (req, res) => {
   if (req.user) {
     console.log(req.user.id);
     const payload = {
-      user: user.username,
-      id: user.id,
-      isAdmin: user.isAdmin,
-      isActive: user.isActive,
+      user: req.user.username,
+      id: req.user.id,
+      isAdmin: req.user.isAdmin,
+      isActive: req.user.isActive,
     };
     const token = jwt.sign(payload, "secretKey", {
       expiresIn: 60 * 60 * 24, // equivalente a 24 horas
