@@ -145,16 +145,19 @@ exports.loginGoogle = async (req, res) => {
   if (req.user) {
     console.log(req.user.id);
     const payload = {
-      user: req.user.username,
-      id: req.user.id,
-      isAdmin: req.user.isAdmin,
-      isActive: req.user.isActive,
+      user: user.username,
+      id: user.id,
+      isAdmin: user.isAdmin,
+      isActive: user.isActive,
     };
     const token = jwt.sign(payload, "secretKey", {
       expiresIn: 60 * 60 * 24, // equivalente a 24 horas
     });
-    // console.log("token");
-    res.cookie("token", token);
+    const cookiesOptions = {
+      expires: new Date(Date.now() + 90 * 24 * 60 * 60 * 1000),
+      httpOnly: true,
+    };
+    res.cookie("jwt", token, cookiesOptions);
     res.redirect("https://barberspf.vercel.app");
   } else {
     res.redirect("https://barberspf.vercel.app/login");
