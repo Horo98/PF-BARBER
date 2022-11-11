@@ -157,7 +157,9 @@ exports.loginGoogle = async (req, res) => {
     };
     console.log('SOY TOKEN!!', token)
     res.cookie("jwt", token, cookiesOptions); 
-    return res.redirect("https://barberspf.vercel.app/");
+    res.status(200).json({success: true,
+      message: "Logged in successfully",
+      token: token})
   } else {
     res.redirect("https://barberspf.vercel.app/login");
   }
