@@ -55,7 +55,7 @@ router.get(
   passport.authenticate("sign-up-google", {
     scope: ["profile", "email"],
     session: false,
-  }async function(error, user) {console.log("SOY USER EN AUTH", user)} ),
+  },
   authController.loginGoogle
 );
 
