@@ -145,12 +145,17 @@ const Ecommerce = ({
               const findProductCar = cart.find(productInCar => productInCar.productId === product.id);
               return (
                 <div className={s.products} key={product.id}>
+                  <div>
+                  <h2 className={s.productInfo}>{product.name}</h2>
+
+                  </div>
                     <div>
-                    <h2 className={s.productInfo}>{product.name}</h2>
+                    {/* <h2 className={s.productInfo}>{product.name}</h2> */}
                     <img className={s.img} src={product.image} alt="img" ></img>
-                    <h4 >{product.quality.toUpperCase()}</h4>
                     </div>
                     <h3 className={s.quantityChange}>in cart: {findProductCar?.quantity ? findProductCar.quantity : 0}</h3>
+                    <h4 className={s.productPrice}> ${product.price}</h4>
+                    <h4 >{product.quality.toUpperCase()}</h4>
                     <div>
                       
                       <button className={s.carrito} onClick={async (e) => {
@@ -167,7 +172,7 @@ const Ecommerce = ({
                         <path d="M6.5 7a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4z" />
                         <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
                       </svg></button>
-
+                    
                     <button className={s.carrito}onClick={async (e) => {
                       e.preventDefault()
                       await deleteItemToCart(product)
@@ -178,7 +183,8 @@ const Ecommerce = ({
                       </div>
 
                     <div className={s.productInfo}>
-                      <h4 className={s.productPrice}> ${product.price}</h4>
+                      
+                      
                     </div>
                     <Link to={`/product/${product.id}`} className={s.button}>SHOW DETAIL</Link>
                   </div>
