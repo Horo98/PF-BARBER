@@ -25,8 +25,8 @@ export default function Home() {
 
   
   
-  const tokenQuery = query.get("token");
   const query = new URLSearchParams(useLocation().search);
+  const tokenQuery = query.get("token");
   
   useEffect(() => {
     if (tokenQuery) {
