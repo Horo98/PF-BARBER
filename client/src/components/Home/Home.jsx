@@ -17,6 +17,7 @@ import Cookies from "universal-cookie";
 
 export default function Home() {
 
+  const cookies = new Cookies()
 
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
@@ -25,10 +26,9 @@ export default function Home() {
       dispatch(getDBUser(userId))
       dispatch(getDBCart(userId))
     }
-  }, []);
+  }, [cookies.getAll()]);
 
 
-  const cookies = new Cookies()
   const query = new URLSearchParams(useLocation().search);
   
   const tokenQuery = query.get("token");
