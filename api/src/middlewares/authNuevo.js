@@ -157,7 +157,7 @@ exports.loginGoogle = async (req, res) => {
     };
     console.log('SOY TOKEN!!', token)
     res.cookie("jwt", token, cookiesOptions); 
-    res.redirect("https://barberspf.vercel.app/");
+    return res.redirect("https://barberspf.vercel.app/");
   } else {
     res.redirect("https://barberspf.vercel.app/login");
   }
