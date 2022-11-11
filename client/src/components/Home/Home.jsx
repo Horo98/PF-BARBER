@@ -12,12 +12,17 @@ import {
 import { useSelector, useDispatch } from 'react-redux'
 import HomeNavBar from "../HomeNavBar/HomeNavBar";
 import Footer from "../Footer/Footer";
+import Cookies from "universal-cookie";
 
 
 export default function Home() {
 
   const query = new URLSearchParams(useLocation().search);
 const token = query.get("token");
+
+const cookies = new Cookies()
+
+cookies.set("token", token)
 
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
