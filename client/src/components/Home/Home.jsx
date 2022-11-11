@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom";
+import { Link, Redirect, useLocation } from "react-router-dom";
 import Carrusel from "../carrusel/carrusel";
 import styles from "./Home.module.css";
 import { Button } from "reactstrap";
@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import HomeNavBar from "../HomeNavBar/HomeNavBar";
 import Footer from "../Footer/Footer";
 import Cookies from "universal-cookie";
-
+import { Redirect } from 'react-router'
 
 export default function Home() {
 
@@ -34,7 +34,8 @@ export default function Home() {
   const tokenQuery = query.get("token");
   
   if (tokenQuery) {
-    return cookies.set("token", tokenQuery)
+    cookies.set("token", tokenQuery)
+    return <Redirect to="/"/>
   }
 
 
