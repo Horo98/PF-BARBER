@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Carrusel from "../carrusel/carrusel";
 import styles from "./Home.module.css";
 import { Button } from "reactstrap";
@@ -16,6 +16,8 @@ import Footer from "../Footer/Footer";
 
 export default function Home() {
 
+  const query = new URLSearchParams(useLocation().search);
+const token = query.get("token");
 
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
@@ -25,7 +27,7 @@ export default function Home() {
       dispatch(getDBCart(userId))
     }
   }, []);
-
+  console.log(token)
   return (
     <div className={styles.background}>
       <div className={styles.title}><h1>BARBER 'S APP</h1>
