@@ -13,7 +13,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import HomeNavBar from "../HomeNavBar/HomeNavBar";
 import Footer from "../Footer/Footer";
 import Cookies from "universal-cookie";
-import { Redirect } from 'react-router'
+
 
 export default function Home() {
 
