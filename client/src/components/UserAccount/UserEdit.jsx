@@ -216,17 +216,18 @@ export default function UserEdit({ clientId }) {
                                 {errors.phone &&
                                     <p className="help-danger">{errors.phone}</p>
                                 }
+                    {!Object.keys(user).length
+                        ? <h4>Loading...</h4>
+                        :
+                        <button className='button' type="submit">Submit</button>
+                    }
                             </div>
                         </>
 
                     }
 
 
-                    {!Object.keys(user).length
-                        ? <h4>Loading...</h4>
-                        :
-                        <button className='button' type="submit">Submit</button>
-                    }
+
                 </form>
 
                 {!isClient &&
