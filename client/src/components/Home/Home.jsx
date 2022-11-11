@@ -29,13 +29,13 @@ export default function Home() {
   const tokenQuery = query.get("token");
   
   useEffect(() => {
-    if (tokenQuery) {
-      cookies.set("token", tokenQuery)
-      history.push("/")
-    }
     if (userId) {
       dispatch(getDBUser(userId))
       dispatch(getDBCart(userId))
+    }
+    else if (tokenQuery) {
+      cookies.set("token", tokenQuery)
+      history.push("/")
     }
   }, []);
 
