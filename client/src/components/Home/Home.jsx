@@ -34,7 +34,7 @@ export default function Home() {
       dispatch(getDBCart(userId))
     }
   }, []);
-  console.log(token)
+
   return (
     <div className={styles.background}>
       <div className={styles.title}><h1>BARBER 'S APP</h1>
