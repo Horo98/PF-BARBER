@@ -16,32 +16,30 @@ import Cookies from "universal-cookie";
 
 
 export default function Home() {
+  const { userId } = useContext(CartContext)
 
+  const dispatch = useDispatch()
   const cookies = new Cookies()
  
 
-  const allCookies = () => {
-    return cookies.getAll()
-  }
 
-  const { userId } = useContext(CartContext)
-  const dispatch = useDispatch()
+  
+  
+  const tokenQuery = query.get("token");
+  const query = new URLSearchParams(useLocation().search);
+  
   useEffect(() => {
+    if (tokenQuery) {
+      cookies.set("token", tokenQuery)
+      return <Redirect to="/"/>
+    }
     if (userId) {
       dispatch(getDBUser(userId))
       dispatch(getDBCart(userId))
     }
-  }, [allCookies]);
+  }, []);
 
 
-  const query = new URLSearchParams(useLocation().search);
-  
-  const tokenQuery = query.get("token");
-  
-  if (tokenQuery) {
-    cookies.set("token", tokenQuery)
-    return <Redirect to="/"/>
-  }
 
 
   return (
