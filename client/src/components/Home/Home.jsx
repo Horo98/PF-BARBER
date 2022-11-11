@@ -18,6 +18,11 @@ import Cookies from "universal-cookie";
 export default function Home() {
 
   const cookies = new Cookies()
+ 
+
+  const allCookies = () => {
+    return cookies.getAll()
+  }
 
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
@@ -26,7 +31,7 @@ export default function Home() {
       dispatch(getDBUser(userId))
       dispatch(getDBCart(userId))
     }
-  }, [cookies.getAll()]);
+  }, [allCookies]);
 
 
   const query = new URLSearchParams(useLocation().search);
