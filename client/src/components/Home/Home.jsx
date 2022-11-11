@@ -16,13 +16,15 @@ import Cookies from "universal-cookie";
 
 
 export default function Home() {
-
+  const cookies = new Cookies()
   const query = new URLSearchParams(useLocation().search);
-const token = query.get("token");
 
-const cookies = new Cookies()
+  const tokenQuery = query.get("token");
 
-cookies.set("token", token)
+  if (tokenQuery) {
+    return cookies.set("token", tokenQuery)
+  }
+
 
   const { userId } = useContext(CartContext)
   const dispatch = useDispatch()
