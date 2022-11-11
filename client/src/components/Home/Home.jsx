@@ -36,9 +36,10 @@ export default function Home() {
     else if (tokenQuery) {
       cookies.set("token", tokenQuery)
       history.push("/")
+      window.location.reload()
+
     }
   }, []);
-
 
 
 
