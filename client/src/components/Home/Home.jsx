@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react"
-import { Link, Redirect, useLocation } from "react-router-dom";
+import { Link, Redirect, useHistory, useLocation } from "react-router-dom";
 import Carrusel from "../carrusel/carrusel";
 import styles from "./Home.module.css";
 import { Button } from "reactstrap";
@@ -21,7 +21,7 @@ export default function Home() {
   const dispatch = useDispatch()
   const cookies = new Cookies()
  
-
+  const history = useHistory()
 
   
   
@@ -31,7 +31,7 @@ export default function Home() {
   useEffect(() => {
     if (tokenQuery) {
       cookies.set("token", tokenQuery)
-      return <Redirect to="/"/>
+      history.push("/")
     }
     if (userId) {
       dispatch(getDBUser(userId))
