@@ -55,8 +55,7 @@ router.get(
   passport.authenticate("sign-up-google", {
     scope: ["profile", "email"],
     session: false,
-  },
-                        //holapa
+  }),
   authController.loginGoogle
 );
 
