@@ -16,14 +16,6 @@ import Cookies from "universal-cookie";
 
 
 export default function Home() {
-  const cookies = new Cookies()
-  const query = new URLSearchParams(useLocation().search);
-
-  const tokenQuery = query.get("token");
-
-  if (tokenQuery) {
-    return cookies.set("token", tokenQuery)
-  }
 
 
   const { userId } = useContext(CartContext)
@@ -34,6 +26,17 @@ export default function Home() {
       dispatch(getDBCart(userId))
     }
   }, []);
+
+
+  const cookies = new Cookies()
+  const query = new URLSearchParams(useLocation().search);
+  
+  const tokenQuery = query.get("token");
+  
+  if (tokenQuery) {
+    return cookies.set("token", tokenQuery)
+  }
+
 
   return (
     <div className={styles.background}>
