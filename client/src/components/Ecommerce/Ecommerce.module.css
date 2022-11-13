@@ -1,9 +1,7 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300&display=swap");
-.background{
-
-    background-image: url(../Home/background.png);
-
+.background {
+  background-image: url(../Home/background.png);
 }
 .containerCard {
   margin: auto;
@@ -21,13 +19,11 @@
 
 .img {
   /* height: 200px; */
-  margin-top: 35px;
-  width: 130px;
+  margin-bottom: -90px;
+  width: 160px;
 
   /* object-fit: cover; */
 }
-
-
 
 .paginado {
   display: flex;
@@ -86,11 +82,11 @@
 }
 
 .productQuality {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   text-align: center;
   line-height: 1;
-  font-size: 20px;
-  padding: 20px;
+  font-size: 10px;
+  padding: 1px;
 }
 
 select::-ms-expand {
@@ -99,7 +95,7 @@ select::-ms-expand {
 
 .button {
   display: inline-block;
-  margin-top: -200px;
+  margin-top: -230px;
   /* padding: 10px 0; */
   background-color: #0b0c0c;
   text-align: center;
@@ -112,7 +108,7 @@ select::-ms-expand {
   border: none;
   text-decoration: none;
 }
-.quantityChange{
+.quantityChange {
   color: rgba(14, 4, 4, 0.534);
 }
 .button:hover {
@@ -136,11 +132,11 @@ select::-ms-expand {
 
 .select {
   width: 7%;
-margin-right: 2%;
-background-color: rgba(32, 30, 29, 0.747);
-color: white;
-border-radius: 14%;
-margin-left: 1%;
+  margin-right: 2%;
+  background-color: rgba(32, 30, 29, 0.747);
+  color: white;
+  border-radius: 14%;
+  margin-left: 1%;
 }
 .pag {
   display: flex;
@@ -150,12 +146,7 @@ margin-left: 1%;
   display: flex;
   justify-content: center;
   margin-top: 25px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
   font-weight: bolder;
   margin-right: 3%;
 }
-
-
-
-
-
