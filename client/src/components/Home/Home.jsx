@@ -45,7 +45,7 @@ export default function Home() {
 
   return (
     <div className={styles.background}>
-      <div className={styles.title}><h1>BARBER 'S APP</h1>
+      <div className={styles.title}><h1>All The Barbers Products For You!</h1> <br /><br /><br />
 
         <Carrusel /></div>
 
