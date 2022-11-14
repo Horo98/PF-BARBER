@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Anton&family=Quicksand:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 
 .background{
     background-image: url('background.png');
@@ -15,7 +16,7 @@
 
 .title {
   padding: 2%;
-  font-family: "Anton", sans-serif;
+  font-family: 'Lobster', cursive;
   font-size: 10%;
   color: rgb(255, 255, 255);
   text-align: center;
@@ -32,7 +33,7 @@
   width: 30rem;
 
   gap: 15px;
-  margin-left: 33.5%;
+  margin-left: 32rem;
   text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
